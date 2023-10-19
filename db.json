@@ -1,0 +1,501 @@
+{
+  "info": {
+    "branchName": "اکباتان",
+    "branchNameEN": "Ekbatan",
+    "branchIMG": "https://s6.uupload.ir/files/branch_nees.png",
+    "tel": "۰۲۱-۱۵۱۴۱۴",
+    "address": "شهرک اکباتان، فاز ۳، مجتمع تجاری کوروش، طبقه سوم"
+  },
+  "comments": [
+    {
+      "id": 1,
+      "username": "عاطفه احمدی",
+      "comment": "از با صفا بودن شعبه اکباتان هر چی بگم کم گفتم. بهترین غذاهای گیاهی عمرمو اینجا خوردم. از مدیریت شعبه اکباتان رستوران‌های ترخینه واقعا تشکر میکنم.",
+      "userIMG": "https://s6.uupload.ir/files/user2_2n8o.png",
+      "date": "۱۰ شهریور ۱۴۰۲"
+    },
+    {
+      "id": 2,
+      "username": "مهدی یراحی",
+      "comment": "از با صفا بودن شعبه اکباتان هر چی بگم کم گفتم. بهترین غذاهای گیاهی عمرمو اینجا خوردم. از مدیریت شعبه اکباتان رستوران‌های ترخینه واقعا تشکر میکنم.",
+      "userIMG": "https://s6.uupload.ir/files/user3_uffk.png",
+      "date": "۱۵ تیر ۱۴۰۲"
+    },
+    {
+      "id": 3,
+      "username": "سروش رفیعی",
+      "comment": "از با صفا بودن شعبه اکباتان هر چی بگم کم گفتم. بهترین غذاهای گیاهی عمرمو اینجا خوردم. از مدیریت شعبه اکباتان رستوران‌های ترخینه واقعا تشکر میکنم.",
+      "userIMG": "https://s6.uupload.ir/files/user_qycd.png",
+      "date": "۱۵ فروردین ۱۴۰۲"
+    },
+    {
+      "id": 4,
+      "username": "ماهور الوند",
+      "comment": "از با صفا بودن شعبه اکباتان هر چی بگم کم گفتم. بهترین غذاهای گیاهی عمرمو اینجا خوردم. از مدیریت شعبه اکباتان رستوران‌های ترخینه واقعا تشکر میکنم.",
+      "userIMG": "https://s6.uupload.ir/files/user2_2n8o.png",
+      "date": "۳۱ مرداد ۱۴۰۲"
+    },
+    {
+      "id": 5,
+      "username": "میلاد بهرامی",
+      "comment": "از با صفا بودن شعبه اکباتان هر چی بگم کم گفتم. بهترین غذاهای گیاهی عمرمو اینجا خوردم. از مدیریت شعبه اکباتان رستوران‌های ترخینه واقعا تشکر میکنم.",
+      "userIMG": "https://s6.uupload.ir/files/user_qycd.png",
+      "date": "۱۷ اردیبهشت ۱۴۰۲"
+    },
+    {
+      "id": 6,
+      "username": "صاحب محمدی",
+      "comment": "از با صفا بودن شعبه اکباتان هر چی بگم کم گفتم. بهترین غذاهای گیاهی عمرمو اینجا خوردم. از مدیریت شعبه اکباتان رستوران‌های ترخینه واقعا تشکر میکنم.",
+      "userIMG": "https://s6.uupload.ir/files/user3_uffk.png",
+      "date": "۲۹ اسفند ۱۴۰۱"
+    }
+  ],
+  "foods": [
+    {
+      "id": 1,
+      "title": "کوفته برنجی",
+      "ingredient": "برنج سبزی کوفته لپه آرد نخودچی، گردو و زرشک و آلو پیاز",
+      "price": 145000,
+      "imgURL": "https://s6.uupload.ir/files/persianfoodpic_s8xb.png",
+      "category": "persianFood",
+      "popularity": 85,
+      "sold": 450
+    },
+    {
+      "id": 2,
+      "title": "کشک بادمجان",
+      "ingredient": "بادمجان، کشک، نعناع خشک، مغز گردو، سیر، پیاز",
+      "price": 95000,
+      "imgURL": "https://s6.uupload.ir/files/persianfoodpic2_i1mt.png",
+      "category": "persianFood",
+      "popularity": 90,
+      "sold": 500
+    },
+    {
+      "id": 3,
+      "title": "میرزا قاسمی",
+      "ingredient": "بادمجان، گوجه فرنگی، تخم مرغ، سیر، رب گوجه فرنگی",
+      "price": 142500,
+      "imgURL": "https://s6.uupload.ir/files/persianfoodpic3_54f3.png",
+      "category": "persianFood",
+      "popularity": 75,
+      "sold": 420
+    },
+    {
+      "id": 4,
+      "title": "باقلاقاتوق",
+      "ingredient": "پاچ باقلا، شوید خشک، کره، سیر، تخم مرغ",
+      "price": 180000,
+      "imgURL": "https://s6.uupload.ir/files/persianfoodpic4_zgd9.png",
+      "category": "persianFood",
+      "popularity": 80,
+      "sold": 440
+    },
+    {
+      "id": 5,
+      "title": "فلافل",
+      "ingredient": "نخود، پیاز، تخم گشنیز، سیر، جعفری، سیب زمینی",
+      "price": 80000,
+      "imgURL": "https://s6.uupload.ir/files/persianfoodpic5_e6p.png",
+      "category": "persianFood",
+      "popularity": 80,
+      "sold": 480
+    },
+    {
+      "id": 6,
+      "title": "کله جوش",
+      "ingredient": "کشک، گردو، پیاز، نعناع خشک",
+      "price": 200000,
+      "imgURL": "https://s6.uupload.ir/files/persianfoodpic6_znk.png",
+      "category": "persianFood",
+      "popularity": 70,
+      "sold": 550
+    },
+    {
+      "id": 7,
+      "title": "بورانی بادمجان",
+      "ingredient": "بادمجان قلمی، ماست چکیده، سیر، روغن زیتون، مغز گردو",
+      "price": 148000,
+      "imgURL": "https://s6.uupload.ir/files/persianfoodpic7_mdri.png",
+      "category": "persianFood",
+      "popularity": 75,
+      "sold": 520
+    },
+    {
+      "id": 8,
+      "title": "بادمجان شکم‌پر",
+      "ingredient": "بادمجان، پیاز، گوجه فرنگی، سبزی خشک",
+      "price": 135000,
+      "imgURL": "https://s6.uupload.ir/files/persianfoodpic8_gy96.png",
+      "category": "persianFood",
+      "popularity": 80,
+      "sold": 560
+    },
+    {
+      "id": 9,
+      "title": "دلمه برگ کلم",
+      "ingredient": "کلم برگ، برنج، لپه پخته، پیاز، سبزی معطر، رب",
+      "price": 200000,
+      "imgURL": "https://s6.uupload.ir/files/persianfoodpic9_ykcl.png",
+      "category": "persianFood",
+      "popularity": 75,
+      "sold": 480
+    },
+    {
+      "id": 10,
+      "title": "دلمه برگ مو",
+      "ingredient": "پیاز، برنج، لپه، سبزی دلمه، سرکه",
+      "price": 195000,
+      "imgURL": "https://s6.uupload.ir/files/persianfoodpic10_oy0f.png",
+      "category": "persianFood",
+      "popularity": 90,
+      "sold": 450
+    },
+    {
+      "id": 11,
+      "title": "کوکو سبزی",
+      "ingredient": "تخم مرغ، گردو، سیر، آرد، روغن مایع، سبزی کوکویی",
+      "price": 220000,
+      "imgURL": "https://s6.uupload.ir/files/persianfoodpic11_3ee0.png",
+      "category": "persianFood",
+      "popularity": 65,
+      "sold": 475
+    },
+    {
+      "id": 12,
+      "title": "کوکو سیب‌زمینی",
+      "ingredient": "سیب زمینی، پیاز متوسط، تخم مرغ، پودر سیر، آرد سوخاری",
+      "price": 100000,
+      "imgURL": "https://s6.uupload.ir/files/persianfoodpic12_iga3.png",
+      "category": "persianFood",
+      "popularity": 60,
+      "sold": 455
+    },
+    {
+      "id": 13,
+      "title": "پاستا سبزیجات",
+      "ingredient": "پاستا، قارچ، گوجه، کدوی خوردشده، پیاز خلالی‌شده",
+      "price": 140000,
+      "imgURL": "https://s6.uupload.ir/files/foreignfood_9d1.png",
+      "category": "foreignFood",
+      "popularity": 70,
+      "sold": 450
+    },
+    {
+      "id": 14,
+      "title": "پاستا بلونز",
+      "ingredient": "اسپاگتی، گوشت چرخ کرده، هویج، ساقه کرفس، گوجه فرنگی و ...",
+      "price": 160000,
+      "imgURL": "https://s6.uupload.ir/files/foreignfood2_2gu2.png",
+      "category": "foreignFood",
+      "popularity": 80,
+      "sold": 550
+    },
+    {
+      "id": 15,
+      "title": "راتاتویی",
+      "ingredient": "بادمجان، گوجه فرنگی، کدو سبز، پیاز، رب گوجه فرنگی، روغن زیتون، پنیر پارمزان",
+      "price": 95000,
+      "imgURL": "https://s6.uupload.ir/files/foreignfood3_i7wm.png",
+      "category": "foreignFood",
+      "popularity": 85,
+      "sold": 420
+    },
+    {
+      "id": 16,
+      "title": "لازانیا",
+      "ingredient": "لازانیا، قارچ، ریحان تازه، جعفری تازه، گوجه فرنگی، پنیر پیتزا، بادمجان",
+      "price": 150000,
+      "imgURL": "https://s6.uupload.ir/files/foreignfood4_asc9.png",
+      "category": "foreignFood",
+      "popularity": 90,
+      "sold": 430
+    },
+    {
+      "id": 17,
+      "title": "سوشی",
+      "ingredient": "جلبک دریایی/ نوری، برنج کته، سرکه سفید (یا سرکه برنج)، شکر، نمک دریا",
+      "price": 85000,
+      "imgURL": "https://s6.uupload.ir/files/foreignfood5_tsla.png",
+      "category": "foreignFood",
+      "popularity": 75,
+      "sold": 540
+    },
+    {
+      "id": 18,
+      "title": "پاکورا سبزیجات",
+      "ingredient": "گرام ماسالا، پودر کاری، سیر له شده، ،گشنیز خرد شده",
+      "price": 110000,
+      "imgURL": "https://s6.uupload.ir/files/foreignfood6_6x3s.png",
+      "category": "foreignFood",
+      "popularity": 70,
+      "sold": 550
+    },
+    {
+      "id": 19,
+      "title": "کالزونه اسفناج",
+      "ingredient": "اسفناج، قارچ، پنیر موزارلا یا پنیر پیتزا، پنیر ریکوتا یا پنیر خامه ای، پیاز",
+      "price": 170000,
+      "imgURL": "https://s6.uupload.ir/files/foreignfood7_t2w.png",
+      "category": "foreignFood",
+      "popularity": 65,
+      "sold": 450
+    },
+    {
+      "id": 20,
+      "title": "پالاک پنیر ",
+      "ingredient": "پنیر، اسفناج، گوجه، پیاز، سیر ",
+      "price": 180000,
+      "imgURL": "https://s6.uupload.ir/files/foreignfood8_mm.png",
+      "category": "foreignFood",
+      "popularity": 70,
+      "sold": 510
+    },
+    {
+      "id": 21,
+      "title": "پیتزا روکولا",
+      "ingredient": "اسفناج، سبزی روکولا، آرد، پودر مایه خمیر، روغن زیتون",
+      "price": 188000,
+      "imgURL": "https://s6.uupload.ir/files/pizzapic_7uky.png",
+      "category": "pizza",
+      "popularity": 75,
+      "sold": 500
+    },
+    {
+      "id": 22,
+      "title": "پیتزا بادمجان و زیتون",
+      "ingredient": "بادمجان کوچک، روغن زیتون، پنیر موزارلا، پنیر پارمزان، برگ ریحان",
+      "price": 150000,
+      "imgURL": "https://s6.uupload.ir/files/pizzapic2_b7pv.png",
+      "category": "pizza",
+      "popularity": 60,
+      "sold": 410
+    },
+    {
+      "id": 23,
+      "title": "پیتزا سبزیجات و خامه",
+      "ingredient": "نخود فرنگی پخته شده، ذرت نیم پز، فلفل دلمه‌ای رنگی، قارچ",
+      "price": 185000,
+      "imgURL": "https://s6.uupload.ir/files/pizzapic3_e2ln.png",
+      "category": "pizza",
+      "popularity": 65,
+      "sold": 520
+    },
+    {
+      "id": 24,
+      "title": "پیتزا قارچ",
+      "ingredient": "قارچ، فلفل دلمه ای، رب گوجه فرنگی، پودر سیر، آویشن، مرزه",
+      "price": 175000,
+      "imgURL": "https://s6.uupload.ir/files/pizzapic4_ydbx.png",
+      "category": "pizza",
+      "popularity": 70,
+      "sold": 470
+    },
+    {
+      "id": 25,
+      "title": "پیتزا پپرونی",
+      "ingredient": "تافو، فلفل قرمز خشک شده، پودر دانه‌های خردل، دانه رازیانه",
+      "price": 100000,
+      "imgURL": "https://s6.uupload.ir/files/pizzapic5_ar2i.png",
+      "category": "pizza",
+      "popularity": 85,
+      "sold": 460
+    },
+    {
+      "id": 26,
+      "title": "پیتزا اسفناج",
+      "ingredient": "اسفناج تازه، پیاز، سیر، پنیر پیتزا، قارچ",
+      "price": 252000,
+      "imgURL": "https://s6.uupload.ir/files/pizzapic6_88f.png",
+      "category": "pizza",
+      "popularity": 75,
+      "sold": 550
+    },
+    {
+      "id": 27,
+      "title": "پیتزا مارگاریتا",
+      "ingredient": "گوجه فرنگی، ریحان، سیر، پنیر پیتزا",
+      "price": 147000,
+      "imgURL": "https://s6.uupload.ir/files/pizzapic7_hntw.png",
+      "category": "pizza",
+      "popularity": 80,
+      "sold": 555
+    },
+    {
+      "id": 28,
+      "title": "پیتزا پنیر",
+      "ingredient": "نان پیتزا، پنیر پیتزا، سس باربیکیو، گوجه فرنگی، سس کچاپ، سیر",
+      "price": 105000,
+      "imgURL": "https://s6.uupload.ir/files/pizzapic8_9ici.png",
+      "category": "pizza",
+      "popularity": 70,
+      "sold": 570
+    }
+  ],
+  "appetizers": [
+    {
+      "id": 1,
+      "title": "سالاد شیرازی",
+      "ingredient": "خیار، گوجه، پیاز، نعناع و ...",
+      "price": 50000,
+      "imgURL": "https://s6.uupload.ir/files/appetizer_czjx.jpg",
+      "category": "appetizer",
+      "populartiy": 85,
+      "sold": 520
+    },
+    {
+      "id": 2,
+      "title": "سیب زمینی سرخ کرده",
+      "ingredient": "سیب زمینی، روغن و ...",
+      "price": 60000,
+      "imgURL": "https://s6.uupload.ir/files/appetizer2_9mha.jpg",
+      "category": "appetizer",
+      "populartiy": 95,
+      "sold": 650
+    },
+    {
+      "id": 3,
+      "title": "سالاد رژیمی",
+      "ingredient": "هویج، ریحان، کلم و ...",
+      "price": 40000,
+      "imgURL": "https://s6.uupload.ir/files/appetizer3_894c.jpg",
+      "category": "appetizer",
+      "populartiy": 70,
+      "sold": 420
+    },
+    {
+      "id": 4,
+      "title": "تارت آلبالو",
+      "ingredient": "آلبالو، آرد، شکر، شیر و ...",
+      "price": 65000,
+      "imgURL": "https://s6.uupload.ir/files/appetizer4_y1s.jpg",
+      "category": "appetizer",
+      "populartiy": 80,
+      "sold": 500
+    }
+  ],
+  "desserts": [
+    {
+      "id": 1,
+      "title": "دسر بانوفی",
+      "ingredient": "بیسکوییت، شکر، موز حلقه شده و ...",
+      "price": 95000,
+      "imgURL": "https://s6.uupload.ir/files/dessert4_o2fl.png",
+      "category": "dessert",
+      "popularity": 80,
+      "sold": 450
+    },
+    {
+      "id": 2,
+      "title": "محلبی کاراملی",
+      "ingredient": "شیر، شکر، خامه، آرد و ...",
+      "price": 105000,
+      "imgURL": "https://s6.uupload.ir/files/dessert3_c4fz.png",
+      "category": "dessert",
+      "popularity": 75,
+      "sold": 480
+    },
+    {
+      "id": 3,
+      "title": "محلبی توت فرنگی",
+      "ingredient": "شیر، شکر، خامه، آرد، توت فرنگی و ...",
+      "price": 120000,
+      "imgURL": "https://s6.uupload.ir/files/dessert2_svuw.png",
+      "category": "dessert",
+      "popularity": 85,
+      "sold": 500
+    },
+    {
+      "id": 4,
+      "title": "دسر زردآلو",
+      "ingredient": "شکر، زردآلو، پودر ژلاتین و ...",
+      "price": 140000,
+      "imgURL": "https://s6.uupload.ir/files/dessert_ijs9.png",
+      "category": "dessert",
+      "popularity": 70,
+      "sold": 510
+    },
+    {
+      "id": 5,
+      "title": "دسر سوخاری شکلاتی",
+      "ingredient": "کره، آرد، شکر، شیر، وانیل و ...",
+      "price": 115000,
+      "imgURL": "https://s6.uupload.ir/files/dessert5_ngwq.png",
+      "category": "dessert",
+      "popularity": 80,
+      "sold": 550
+    },
+    {
+      "id": 6,
+      "title": "موس کدو حلوایی",
+      "ingredient": "پودر ژلاتین، زنجبیل، دارچین، کدو حلوایی، شکر و ...",
+      "price": 177000,
+      "imgURL": "https://s6.uupload.ir/files/dessert6_m0gz.png",
+      "category": "dessert",
+      "popularity": 70,
+      "sold": 470
+    },
+    {
+      "id": 7,
+      "title": "دسر استوایی",
+      "ingredient": "انبه، خامه، بیسکوییت، شکر و ...",
+      "price": 150000,
+      "imgURL": "https://s6.uupload.ir/files/dessert7_lj9l.png",
+      "category": "dessert",
+      "popularity": 85,
+      "sold": 570
+    },
+    {
+      "id": 8,
+      "title": "دسر تامیلا",
+      "ingredient": "شیر، آرد، شکر، تخم مرغ و ...",
+      "price": 165000,
+      "imgURL": "https://s6.uupload.ir/files/dessert8_3u7a.png",
+      "category": "dessert",
+      "popularity": 80,
+      "sold": 530
+    }
+  ],
+  "drinks": [
+    {
+      "id": 1,
+      "title": "ماکتل آلبالو",
+      "ingredient": "آلبالو، آب و ...",
+      "price": 150000,
+      "imgURL": "https://s6.uupload.ir/files/drink_l2kn.png",
+      "category": "drink",
+      "popularity": 85,
+      "sold": 520
+    },
+    {
+      "id": 2,
+      "title": "لیموناد",
+      "ingredient": "لیمو، ریحان، آب، و ...",
+      "price": 125000,
+      "imgURL": "https://s6.uupload.ir/files/drink2_sm9d.jpg",
+      "category": "drink",
+      "popularity": 80,
+      "sold": 500
+    },
+    {
+      "id": 3,
+      "title": "ماکتل انبه",
+      "ingredient": "انبه، آب، شکر و ...",
+      "price": 130000,
+      "imgURL": "https://s6.uupload.ir/files/drink3_8hlo.jpg",
+      "category": "drink",
+      "popularity": 75,
+      "sold": 480
+    },
+    {
+      "id": 4,
+      "title": "اسموتی پرتغال",
+      "ingredient": "پرتغال، یخ، توت فرنگی، آب و ...",
+      "price": 145000,
+      "imgURL": "https://s6.uupload.ir/files/drink4_pg1y.jpg",
+      "category": "drink",
+      "popularity": 85,
+      "sold": 530
+    }
+  ]
+}
