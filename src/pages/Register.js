@@ -1,6 +1,4 @@
-import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 
 import SignupModal from "../components/SignupModal";
 import LoginModal from "../components/LoginModal";

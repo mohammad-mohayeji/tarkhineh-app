@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { NavLink, Navigate, json, useNavigate } from "react-router-dom";
+import { NavLink, Navigate, useNavigate } from "react-router-dom";
 import { useGetCookie } from "../hooks/useGetCookie"
 import ProfileSidebar from "../components/ProfileSidebar";
 import axios from "axios";

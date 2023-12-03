@@ -1,6 +1,5 @@
 import { createContext, useEffect, useState } from "react";
 import convertNumberToPersian from "./convertNumberToPersian";
-import Swal from "sweetalert2";
 import axios from "axios";
 import {ToastContainer, toast} from "react-toastify"
 
