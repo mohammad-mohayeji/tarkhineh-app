@@ -1,13 +1,9 @@
 import { NavLink } from "react-router-dom";
 import user from "../assets/images/user.png";
 
-import {
-    UserIcon,
-    BanknotesIcon,
-    HeartIcon,
-    MapPinIcon,
-    ArrowLeftOnRectangleIcon,
-  } from "@heroicons/react/24/outline";
+// import icons
+import { User, Wallet2, Heart, Location, LogoutCurve} from "iconsax-react";
+
 
 export default function ProfileSidebar({ showProfileSidebar, setShowProfileSidebar, logoutHandler }) {
   return (
@@ -30,7 +26,7 @@ export default function ProfileSidebar({ showProfileSidebar, setShowProfileSideb
           <li className="text-primary ">
             <NavLink className="flex items-center py-2 px-1 hover:bg-tint-100 rounded">
               <span>
-                <UserIcon className="w-5 h-5 ml-1" />
+                <User className="w-5 h-5 ml-1" />
               </span>
               <span>پروفایل</span>
             </NavLink>
@@ -38,7 +34,7 @@ export default function ProfileSidebar({ showProfileSidebar, setShowProfileSideb
           <li>
             <NavLink className="flex items-center py-2 px-1 hover:bg-tint-100 rounded">
               <span>
-                <BanknotesIcon className="w-5 h-5 ml-1" />
+                <Wallet2 className="w-5 h-5 ml-1" />
               </span>
               <span>پیگیری سفارشات</span>
             </NavLink>
@@ -46,7 +42,7 @@ export default function ProfileSidebar({ showProfileSidebar, setShowProfileSideb
           <li>
             <NavLink className="flex items-center py-2 px-1 hover:bg-tint-100 rounded">
               <span>
-                <HeartIcon className="w-5 h-5 ml-1" />
+                <Heart className="w-5 h-5 ml-1" />
               </span>
               <span>علاقمندی ها</span>
             </NavLink>
@@ -54,18 +50,15 @@ export default function ProfileSidebar({ showProfileSidebar, setShowProfileSideb
           <li>
             <NavLink className="flex items-center py-2 px-1 hover:bg-tint-100 rounded">
               <span>
-                <MapPinIcon className="w-5 h-5 ml-1" />
+                <Location className="w-5 h-5 ml-1" />
               </span>
               <span>آدرس های من</span>
             </NavLink>
           </li>
           <li className="text-red-600">
-            <button
-              onClick={logoutHandler}
-              className="w-full flex items-center py-2 px-1 hover:bg-tint-100 rounded"
-            >
+            <button onClick={logoutHandler} className="w-full flex items-center py-2 px-1 hover:bg-tint-100 rounded">
               <span>
-                <ArrowLeftOnRectangleIcon className="w-5 h-5 ml-1" />
+                <LogoutCurve className="w-5 h-5 ml-1" />
               </span>
               <span>خروج</span>
             </button>

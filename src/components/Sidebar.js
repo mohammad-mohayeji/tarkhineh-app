@@ -4,13 +4,9 @@ import background from "../assets/images/sbheader.png";
 import logo from "../assets/images/logo2.svg";
 import { Link } from "react-router-dom";
 
-import {GoHome} from "react-icons/go"
-import {BiFoodMenu} from "react-icons/bi"
-import {TbSmartHome} from "react-icons/tb"
-import {PiUsersBold} from "react-icons/pi"
-import {FiPhoneCall} from "react-icons/fi"
-import {HiOutlineX} from "react-icons/hi"
-import { ChevronDownIcon } from "@heroicons/react/24/outline";
+
+// import icons
+import { Home, HomeHashtag, MenuBoard, Profile2User, CallCalling, ArrowDown2, Add } from "iconsax-react";
 
 export default function Sidebar({ info ,showSidebar, setShowSidebar}) {
   const[showAccordion, setShowAccordion] = useState(false);
@@ -25,23 +21,23 @@ export default function Sidebar({ info ,showSidebar, setShowSidebar}) {
             <img src={logo} alt="" className="w-auto object-cover" />
           </div>
           <button onClick={(e)=> setShowSidebar(false)}>
-            <HiOutlineX className="text-white text-lg"/>
+            <Add className="text-white text-lg rotate-45"/>
           </button>
         </div>
         <ul className="text-sm p-3">
           <li>
             <Link to="/" className="flex items-center gap-x-2 py-2 border-b border-gray-400">
-              <span><GoHome className="text-xl text-shade-200"/></span>
+              <span><Home className="text-xl text-shade-200"/></span>
               <span>صفحه اصلی</span>
             </Link>
           </li>
           <li>
             <button onClick={(e)=> setShowAccordion(!showAccordion)} className="w-full flex items-center justify-between py-2 border-b border-gray-400">
               <div className="flex items-center gap-x-2">
-                <span><TbSmartHome className="text-xl text-shade-200"/></span>
+                <span><HomeHashtag className="text-xl text-shade-200"/></span>
                 <span>شعبه</span>
               </div>
-              <span><ChevronDownIcon className={`${!showAccordion ? '' : 'rotate-180'} w-3 h-3 transition duration-300`}/></span>
+              <span><ArrowDown2 className={`${!showAccordion ? '' : 'rotate-180'} w-3 h-3 transition duration-300`}/></span>
             </button>
             <div className={`${!showAccordion ? 'hidden' : ''}`}>
               <div className="w-full px-2 my-2">
@@ -57,10 +53,10 @@ export default function Sidebar({ info ,showSidebar, setShowSidebar}) {
           <li>
             <button onClick={(e)=> setShowAccordion2(!showAccordion2)} className="w-full flex items-center justify-between py-2 border-b border-gray-400">
               <div className="flex items-center gap-x-2">
-                <span><BiFoodMenu className="text-xl text-shade-200"/></span>
+                <span><MenuBoard className="text-xl text-shade-200"/></span>
                 <span>منو</span>
               </div>
-              <span><ChevronDownIcon className={`${!showAccordion2 ? '' : 'rotate-180'} w-3 h-3 transition duration-300`}/></span>
+              <span><ArrowDown2 className={`${!showAccordion2 ? '' : 'rotate-180'} w-3 h-3 transition duration-300`}/></span>
             </button>
             <div className={`${!showAccordion2 ? 'hidden' : ''}`}>
               <div className="w-full px-2 my-2">
@@ -75,13 +71,13 @@ export default function Sidebar({ info ,showSidebar, setShowSidebar}) {
           </li>
           <li>
             <Link className="flex items-center gap-x-2 py-2 border-b border-gray-400">
-              <span><PiUsersBold className="text-xl text-shade-200"/></span>
+              <span><Profile2User className="text-xl text-shade-200"/></span>
               <span>درباره ما</span>
             </Link>
           </li>
           <li>
             <Link className="flex items-center gap-x-2 py-2">
-              <span><FiPhoneCall className="text-xl text-shade-200"/></span>
+              <span><CallCalling className="text-xl text-shade-200"/></span>
               <span>تماس با ما</span>
             </Link>
           </li>

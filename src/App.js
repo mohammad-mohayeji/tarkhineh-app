@@ -11,9 +11,11 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import Profile from "./pages/Profile";
-import Login from "./pages/Login";
+import Register from "./pages/Register";
+import convertNumberToPersian from "./convertNumberToPersian";
 
 function App() {
+  convertNumberToPersian();
   return (
     <ScrollToTop>
       <div className="App relative">
@@ -24,7 +26,7 @@ function App() {
           <Route path="/branches/:branchName/menu/:foodCategory" element={<Menu />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
         <Footer />
       </div>

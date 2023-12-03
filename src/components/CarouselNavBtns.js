@@ -1,5 +1,5 @@
 import { useSwiper } from "swiper/react";
-import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
+import { ArrowLeft2, ArrowRight2 } from "iconsax-react";
 
 export default function CarouselNavBtns() {
   const swiper = useSwiper();
@@ -10,13 +10,13 @@ export default function CarouselNavBtns() {
         onClick={(e) => swiper.slidePrev()}
         className="bg-white p-1.5 border border-gray-300 rounded-full"
       >
-        <ChevronRightIcon className="w-6 h-6 text-gray-600" />
+        <ArrowRight2 className="w-6 h-6 text-gray-600" />
       </button>
       <button
         onClick={(e) => swiper.slideNext()}
         className="bg-white p-1.5 border border-gray-300 rounded-full"
       >
-        <ChevronLeftIcon className="w-6 h-6 text-gray-600" />
+        <ArrowLeft2 className="w-6 h-6 text-gray-600" />
       </button>
     </div>
   );

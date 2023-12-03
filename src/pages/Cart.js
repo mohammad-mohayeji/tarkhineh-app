@@ -2,10 +2,8 @@ import React, { useContext } from "react";
 import { GlobalContext } from "../GlobalContextProvider";
 import ShoppingCard from "../components/ShoppingCard";
 
-import { PiShoppingCartBold } from "react-icons/pi";
-import { TrashIcon } from "@heroicons/react/24/outline";
-import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
-import { ShoppingCartIcon } from "@heroicons/react/24/outline";
+// import icons
+import { Trash, Warning2 } from "iconsax-react";
 
 import emptyCartBg from "../assets/images/emptyCartBg.png";
 import { Link } from "react-router-dom";
@@ -33,7 +31,6 @@ export default function Cart() {
       {cartItems.length > 0 && (
         <div className="container">
           <h1 className="flex items-center text-white gap-x-2 mb-5">
-            {/* <ShoppingCartIcon className="w-6 h-6"/> */}
             <span className="font-semibold text-lg bg-primary rounded p-2">
               سبد خرید
             </span>
@@ -42,12 +39,6 @@ export default function Cart() {
             <div className="w-full lg:w-[54%]">
               <div className="border border-gray-300 rounded-lg p-5 max-h-[350px] md:max-h-[430px] overflow-y-auto">
                 <div className=" flex flex-col gap-y-4">
-                  {/* card */}
-                  {/* <ShoppingCard />
-                <ShoppingCard />
-                <ShoppingCard />
-                <ShoppingCard />
-                <ShoppingCard /> */}
                   {cartItems.map((item) => (
                     <ShoppingCard key={item.id} item={item} />
                   ))}
@@ -60,7 +51,7 @@ export default function Cart() {
                   <div className="flex items-center justify-between border-b-2 border-gray-300 pb-3">
                     <h4 className="font-semibold text-gray-800">سبد خرید</h4>
                     <button>
-                      <TrashIcon onClick={(e)=> setCartItems([])} className="w-5 h-5 md:w-6 md:h-6 hover:text-primary transition duration-200" />
+                      <Trash onClick={(e)=> setCartItems([])} className="w-5 h-5 md:w-6 md:h-6 hover:text-primary transition duration-200" />
                     </button>
                   </div>
                   <div className="flex items-center justify-between border-b-2 border-gray-300 pb-3">
@@ -74,7 +65,7 @@ export default function Cart() {
                     </div>
                     <div className="flex gap-x-2  text-yellow-600">
                       <span>
-                        <ExclamationTriangleIcon className="w-5 h-5" />
+                        <Warning2 className="w-5 h-5" />
                       </span>
                       <span className="text-xs">
                         هزینه ارسال در ادامه بر اساس آدرس، زمان و نحوه ارسال

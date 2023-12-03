@@ -1,7 +1,5 @@
 import React from "react";
 
-import customer from "../assets/images/customer.png";
-
 export default function CommentCard({ item }) {
   return (
     <div>

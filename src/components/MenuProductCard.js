@@ -2,7 +2,8 @@ import React, { useContext } from "react";
 import { numberWithCommas } from "../numberWithCommas";
 import { GlobalContext } from "../GlobalContextProvider";
 
-import { StarIcon } from "@heroicons/react/24/solid";
+// import icons
+import { Star1 } from "iconsax-react";
 
 export default function MenuProductCard({ item }) {
   const {increaseQuantityHandler} = useContext(GlobalContext);
@@ -31,11 +32,11 @@ export default function MenuProductCard({ item }) {
           </div>
           <div className="flex items-center justify-between gap-x-1">
             <div className="flex items-center">
-              <StarIcon className="w-3 h-3 sm:w-5 sm:h-5 fill-yellow-400" />
-              <StarIcon className="w-3 h-3 sm:w-5 sm:h-5 fill-yellow-400" />
-              <StarIcon className="w-3 h-3 sm:w-5 sm:h-5 fill-yellow-400" />
-              <StarIcon className="w-3 h-3 sm:w-5 sm:h-5 fill-yellow-400" />
-              <StarIcon className="w-3 h-3 sm:w-5 sm:h-5 fill-yellow-400" />
+              <Star1 className="w-3 h-3 sm:w-5 sm:h-5 text-yellow-400 fill-yellow-400" />
+              <Star1 className="w-3 h-3 sm:w-5 sm:h-5 text-yellow-400 fill-yellow-400" />
+              <Star1 className="w-3 h-3 sm:w-5 sm:h-5 text-yellow-400 fill-yellow-400" />
+              <Star1 className="w-3 h-3 sm:w-5 sm:h-5 text-yellow-400 fill-yellow-400" />
+              <Star1 className="w-3 h-3 sm:w-5 sm:h-5 text-yellow-400 fill-yellow-400" />
             </div>
             <button onClick={(e)=> increaseQuantityHandler(item)} className="w-full text-[8px] sm:text-sm xl:text-base max-w-[200px] sm:max-w-[245px] lg:max-w-[130px] xl:max-w-[245px] bg-primary text-white p-2 rounded-md">
               افزودن به سبد خرید

@@ -1,23 +1,27 @@
 import { createContext, useEffect, useState } from "react";
 import convertNumberToPersian from "./convertNumberToPersian";
-import { numberWithCommas } from "./numberWithCommas";
 import Swal from "sweetalert2";
+import axios from "axios";
+import {ToastContainer, toast} from "react-toastify"
 
 export const GlobalContext = createContext();
 
 export default function GlobalContextProvider({ children }) {
+  const [loading, setLoading] = useState(false);
   const [sortType, setSortType] = useState("mostPopular");
-  const [info, setInfo] = useState({});
-  const [comments, setComments] = useState([]);
-  const [products, setProducts] = useState([]);
-  const [persianFoods, setPersianFoods] = useState([]);
-  const [foreignFoods, setForeignFoods] = useState([]);
-  const [pizzas, setPizzas] = useState([]);
-  const [appetizers, setAppetizers] = useState([]);
-  const [desserts, setDesserts] = useState([]);
-  const [drinks, setDrinks] = useState([]);
 
+  const [users, setUsers] = useState([]);
+  const [onlineUser, setOnlineUser] = useState({});
+  const [products, setProducts] = useState([]);
   const [cartItems, setCartItems] = useState([]);
+
+  useEffect(() => {
+    axios.get("http://localhost:5000/users").then((res) => {
+      setUsers(res.data);
+    });
+  }, []);
+
+  convertNumberToPersian();
 
   const increaseQuantityHandler = (product) => {
     const existingProduct = cartItems.find(
@@ -33,12 +37,17 @@ export default function GlobalContextProvider({ children }) {
       );
     } else {
       setCartItems([...cartItems, { ...product, quantity: 1 }]);
-      Swal.fire({
-        icon: "success",
-        title: "محصول به سبد خرید اضافه شد!",
-        showConfirmButton: false,
-        timer: 2500,
-        timerProgressBar: true,
+      toast("محصول به سبد خرید اضافه شد.", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        rtl: true,
+        theme: "light",
+        type: "success"
       });
     }
   };
@@ -67,41 +76,10 @@ export default function GlobalContextProvider({ children }) {
     setCartItems(cartItems.filter((item) => item.id !== product.id));
   };
 
-  useEffect(() => {
-    convertNumberToPersian();
-  });
-
   return (
-    <GlobalContext.Provider
-      value={{
-        cartItems,
-        sortType,
-        info,
-        comments,
-        products,
-        persianFoods,
-        foreignFoods,
-        pizzas,
-        appetizers,
-        desserts,
-        drinks,
-        setCartItems,
-        increaseQuantityHandler,
-        decreaseQuantityHandler,
-        removeFromCartHandler,
-        setSortType,
-        setInfo,
-        setComments,
-        setProducts,
-        setPersianFoods,
-        setForeignFoods,
-        setPizzas,
-        setAppetizers,
-        setDesserts,
-        setDrinks,
-      }}
-    >
+    <GlobalContext.Provider value={{ loading, cartItems, sortType, products, users, onlineUser, setLoading, setCartItems, setSortType, setProducts, increaseQuantityHandler, decreaseQuantityHandler, removeFromCartHandler,}}>
       {children}
+      <ToastContainer rtl={true}/>
     </GlobalContext.Provider>
   );
 }

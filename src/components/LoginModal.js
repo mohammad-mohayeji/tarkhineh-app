@@ -1,80 +1,98 @@
-import { useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import logo from "../assets/images/logo.svg";
-
-import { XMarkIcon } from "@heroicons/react/24/outline";
-import Swal from "sweetalert2";
+import { GlobalContext } from "../GlobalContextProvider";
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from "react-router-dom";
 
-export default function LoginModal({ showModal, setShowModal }) {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+export default function LoginModal() {
+  const userRef = useRef();
+  const { users } = useContext(GlobalContext);
   const navigate = useNavigate();
 
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
   const submitHandler = () => {
-    if (username === "admin" && password === "12345") {
-      document.cookie = "username=admin";
-      navigate("/profile");
-      setShowModal(false);
-      setUsername("");
-      setPassword("");
+    const existingUser = users.find((user) => user.username === username && user.password === password);
+    if (existingUser) {
+      toast("ورود موفقیت آمیز بود!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        type: "success",
+      });
+      document.cookie=`userToken=${existingUser.token}`;
+      navigate('/profile');
     } else {
-      Swal.fire({
-        icon: "error",
-        text: "نام کاربری یا رمز عبور اشتباه است!",
-        confirmButtonText: "بستن",
+      toast("نام کاربری یا رمز عبور اشتباه است!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        type: "error",
       });
     }
   };
+
+  useEffect(() => {
+    userRef.current.focus();
+  }, []);
   return (
-    <div
-      className={`${
-        !showModal ? "hidden" : ""
-      } absolute z-50 top-[350%] left-1/2 -translate-x-1/2 -translate-y-1/2`}
-    >
-      <div className="bg-white rounded-md shadow-lg overflow-hidden w-[390px]">
-        <div className="p-5 flex flex-col items-center">
-          <div className="w-full mb-4 relative">
-            <img src={logo} alt="" className="max-w-[120px] mx-auto" />
-            {/* <p className="text-gray-700 text-lg font-semibold text-center mb-3">ورود به پروفایل</p> */}
+    <div className="px-5 py-10 flex flex-col items-center">
+      <div className="w-full mb-6 relative">
+        <img src={logo} alt="" className="max-w-[120px] mx-auto" />
+      </div>
+      <div className="w-full">
+        <form>
+          <div className="flex flex-col gap-y-4">
+            <div className="flex flex-col gap-y-2">
+              <label htmlFor="username">نام کاربری: </label>
+              <input
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                id="username"
+                ref={userRef}
+                type="text"
+                autoComplete="off"
+                className="w-full border border-gray-300 rounded-md p-2 text-sm placeholder:text-sm focus:outline-none"
+                placeholder="نام کاربری"
+              />
+            </div>
+            <div className="flex flex-col gap-y-2">
+              <label htmlFor="password">رمز عبور:</label>
+              <input
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                id="password"
+                type="password"
+                className="w-full border border-gray-300 rounded-md p-2 text-sm placeholder:text-sm focus:outline-none"
+                placeholder="رمز عبور"
+              />
+            </div>
             <button
-              onClick={(e) => setShowModal(false)}
-              className="absolute top-0 left-0"
+              onClick={submitHandler}
+              className="w-full bg-primary text-white font-medium rounded-md p-2"
+              type="button"
             >
-              <XMarkIcon className="w-5 h-5 text-gray-500" />
+              ورود
             </button>
           </div>
-          <div className="w-full">
-            <form>
-              <div className="flex flex-col gap-y-2">
-                <input
-                  onChange={(e) => setUsername(e.target.value)}
-                  value={username}
-                  type="text"
-                  className="w-full border border-gray-300 rounded-md p-2 text-sm placeholder:text-sm focus:outline-none"
-                  placeholder="نام کاربری"
-                />
-                <input
-                  onChange={(e) => setPassword(e.target.value)}
-                  value={password}
-                  type="password"
-                  className="w-full border border-gray-300 rounded-md p-2 text-sm placeholder:text-sm focus:outline-none"
-                  placeholder="رمز عبور"
-                />
-                <button
-                  onClick={submitHandler}
-                  className="w-full bg-primary text-white rounded-md p-2"
-                  type="button"
-                >
-                  ورود
-                </button>
-              </div>
-            </form>
-          </div>
-          <span className="text-xs text-center mt-4">
-            ورود و عضویت در ترخینه به منزله قبول قوانین و مقررات است.
-          </span>
-        </div>
+        </form>
       </div>
+      <span className="text-xs text-center mt-4">
+        ورود و عضویت در ترخینه به منزله قبول{" "}
+        <b className="text-primary">قوانین و مقررات</b> است.
+      </span>
     </div>
   );
 }

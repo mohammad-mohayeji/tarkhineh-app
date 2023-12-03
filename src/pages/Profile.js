@@ -1,32 +1,84 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-import { NavLink, Navigate, useNavigate } from "react-router-dom";
-import { isLoggedin } from "../utils";
-
-import user from "../assets/images/user.png";
-import {
-  UserIcon,
-  BanknotesIcon,
-  HeartIcon,
-  MapPinIcon,
-  ArrowLeftOnRectangleIcon,
-  PencilIcon,
-  EllipsisHorizontalIcon
-} from "@heroicons/react/24/outline";
+import { NavLink, Navigate, json, useNavigate } from "react-router-dom";
+import { useGetCookie } from "../hooks/useGetCookie"
 import ProfileSidebar from "../components/ProfileSidebar";
+import axios from "axios";
+
+// import img
+import user from "../assets/images/user.png";
+
+// import icons
+import { Edit, User, Wallet2, Heart, Location, LogoutCurve, HambergerMenu } from "iconsax-react";
+import { toast } from "react-toastify";
+import convertNumberToPersian from "../convertNumberToPersian";
 
 export default function Profile() {
   const [showProfileSidebar, setShowProfileSidebar] = useState(false)
   const navigate = useNavigate();
 
+  const [users, setUsers] = useState([]);
+  const [formData, setFormData] = useState({});
+  const userToken = useGetCookie("userToken");
+
+  useEffect(() => {
+    axios.get("http://localhost:5000/users").then((res) => {
+      setUsers(res.data);
+    })
+  }, []);
+
+  useEffect(()=> {
+      setFormData(users.find((user)=> user.token === userToken));
+  }, [users])
+
   const logoutHandler = () => {
-    document.cookie = "username=; expires=Thu, 18 Dec 2013 12:00:00 UTC";
+    document.cookie = "userToken=; expires=Thu, 18 Dec 2013 12:00:00 UTC";
     navigate("/");
   };
 
+  const changeHandler = (e)=> {
+    setFormData({...formData, [e.target.name]: e.target.value})
+  }
+
+  const submitHandler = ()=> {
+    const userID = formData.id;
+    console.log(userID);
+    axios.put(`http://localhost:5000/users/${userID}`, {...formData}).then((res)=> {
+      if(res.status === 200) {
+        toast("اطلاعات با موفقیت ثبت شد.", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          type: "success",
+        });
+      }
+    }).catch((err)=> {
+      console.log(err);
+      toast("ثبت اطلاعات با شکست مواجه شد!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        type: "error",
+      });
+    })
+  }
+
+  // convert numbers to persian
+  convertNumberToPersian();
+
   return (
     <div>
-      {isLoggedin() ? (
+      {useGetCookie("userToken") ? (
         <section className="container">
           <div className="flex py-10 gap-x-5">
             <div className="hidden md:block md:w-[35%] lg:w-[30%] xl:w-[25%]">
@@ -37,7 +89,7 @@ export default function Profile() {
                   </div>
                   <div>
                     <p className="mt-3 mb-1 font-medium">کاربر ترخینه</p>
-                    <span className="text-sm text-gray-400">۰۹۱۳۱۲۳۴۵۶۷</span>
+                    <span className="text-sm text-gray-400">{formData?.phonenumber}</span>
                   </div>
                 </div>
                 <hr />
@@ -46,7 +98,7 @@ export default function Profile() {
                     <li className="text-primary ">
                       <NavLink className="flex items-center py-2 px-1 hover:bg-tint-100 rounded">
                         <span>
-                          <UserIcon className="w-5 h-5 ml-1" />
+                          <User className="w-5 h-5 ml-1" />
                         </span>
                         <span>پروفایل</span>
                       </NavLink>
@@ -54,7 +106,7 @@ export default function Profile() {
                     <li>
                       <NavLink className="flex items-center py-2 px-1 hover:bg-tint-100 rounded">
                         <span>
-                          <BanknotesIcon className="w-5 h-5 ml-1" />
+                          <Wallet2 className="w-5 h-5 ml-1" />
                         </span>
                         <span>پیگیری سفارشات</span>
                       </NavLink>
@@ -62,7 +114,7 @@ export default function Profile() {
                     <li>
                       <NavLink className="flex items-center py-2 px-1 hover:bg-tint-100 rounded">
                         <span>
-                          <HeartIcon className="w-5 h-5 ml-1" />
+                          <Heart className="w-5 h-5 ml-1" />
                         </span>
                         <span>علاقمندی ها</span>
                       </NavLink>
@@ -70,7 +122,7 @@ export default function Profile() {
                     <li>
                       <NavLink className="flex items-center py-2 px-1 hover:bg-tint-100 rounded">
                         <span>
-                          <MapPinIcon className="w-5 h-5 ml-1" />
+                          <Location className="w-5 h-5 ml-1" />
                         </span>
                         <span>آدرس های من</span>
                       </NavLink>
@@ -81,7 +133,7 @@ export default function Profile() {
                         className="w-full flex items-center py-2 px-1 hover:bg-tint-100 rounded"
                       >
                         <span>
-                          <ArrowLeftOnRectangleIcon className="w-5 h-5 ml-1" />
+                          <LogoutCurve className="w-5 h-5 ml-1" />
                         </span>
                         <span>خروج</span>
                       </button>
@@ -91,28 +143,46 @@ export default function Profile() {
               </div>
             </div>
             <div className="w-full md:w-[65%] lg:w-[70%] xl:w-[75%]">
-              <div className="border border-gray-300 rounded-lg p-4 min-h-[480px]">
+              <div className="border border-gray-300 rounded-lg p-4">
                 <div className="flex justify-between items-center border-b border-gray-300 pb-2">
                   <h2 className="text-xl font-semibold text-gray-700">
                     پروفایل من
                   </h2>
                   <button onClick={(e)=> setShowProfileSidebar(!showProfileSidebar)} className="md:hidden">
-                    <EllipsisHorizontalIcon className="w-6 h-6 text-primary"/>
+                    <HambergerMenu className="w-6 h-6 text-primary"/>
                   </button>
                 </div>
                 <div className="p-8">
-                  <form className="flex items-center flex-wrap gap-6 mb-10">
-                    <input type="text" placeholder="نام" className="w-[100%] sm:w-[45%] p-2 border border-gray-200 rounded focus:outline-none placeholder:text-sm text-sm md:text-base md:placeholder:text-base" />
-                    <input type="text" placeholder="نام خانوادگی" className="w-[100%] sm:w-[45%] p-2 border border-gray-200 rounded focus:outline-none placeholder:text-sm text-sm md:text-base md:placeholder:text-base" />
-                    <input type="text" placeholder="آدرس ایمیل" className="w-[100%] sm:w-[45%] p-2 border border-gray-200 rounded focus:outline-none placeholder:text-sm text-sm md:text-base md:placeholder:text-base" />
-                    <input type="text" placeholder="شماره تلفن" className="w-[100%] sm:w-[45%] p-2 border border-gray-200 rounded focus:outline-none placeholder:text-sm text-sm md:text-base md:placeholder:text-base" />
-                    <input type="text" placeholder="تاریخ تولد" className="w-[100%] sm:w-[45%] p-2 border border-gray-200 rounded focus:outline-none placeholder:text-sm text-sm md:text-base md:placeholder:text-base" />
-                    <input type="text" placeholder="نام کاربری" className="w-[100%] sm:w-[45%] p-2 border border-gray-200 rounded focus:outline-none placeholder:text-sm text-sm md:text-base md:placeholder:text-base" />
-                  </form>
-                    <button className="flex items-center justify-center text-xs md:text-base text-primary p-2 w-[75%] sm:w-full max-w-[280px] border border-primary rounded mx-auto">
-                      <PencilIcon className="w-4 h-4 md:w-5 md:h-5 ml-2"/>
+                  <form className="flex items-center flex-wrap gap-6" autoComplete="false">
+                    <div className="flex flex-col gap-y-2 w-[100%] sm:w-[45%]">
+                      <label htmlFor="firstName">نام:</label>
+                      <input value={formData?.firstname} onChange={changeHandler} id="firstName" name="firstname" type="text" placeholder="نام" className="w-[100%] p-2 border border-gray-200 rounded focus:outline-none placeholder:text-sm text-sm md:text-base md:placeholder:text-base" />
+                    </div>
+                    <div className="flex flex-col gap-y-2 w-[100%] sm:w-[45%]">
+                      <label htmlFor="lastName">نام خانوادگی:</label>
+                      <input value={formData?.lastname} onChange={changeHandler} id="lastName" name="lastname" type="text" placeholder="نام خانوادگی" className="w-[100%] p-2 border border-gray-200 rounded focus:outline-none placeholder:text-sm text-sm md:text-base md:placeholder:text-base" />
+                    </div>
+                    <div className="flex flex-col gap-y-2 w-[100%] sm:w-[45%]">
+                      <label htmlFor="email">آدرس ایمیل:</label>
+                      <input value={formData?.email} onChange={changeHandler} id="email" name="email" type="text" placeholder="آدرس ایمیل" className="w-[100%] p-2 border border-gray-200 rounded focus:outline-none placeholder:text-sm text-sm md:text-base md:placeholder:text-base" />
+                    </div>
+                    <div className="flex flex-col gap-y-2 w-[100%] sm:w-[45%]">
+                      <label htmlFor="phoneNumber">شماره تلفن:</label>
+                      <input value={formData?.phonenumber} onChange={changeHandler} id="phoneNumber" name="phonenumber" type="text" placeholder="شماره تلفن" className="w-[100%] p-2 border border-gray-200 rounded focus:outline-none placeholder:text-sm text-sm md:text-base md:placeholder:text-base" />
+                    </div>
+                    <div className="flex flex-col gap-y-2 w-[100%] sm:w-[45%]">
+                      <label htmlFor="address">آدرس محل سکونت:</label>
+                      <input value={formData?.address} onChange={changeHandler} id="address" type="text" name="address" placeholder="آدرس محل سکونت" className="w-[100%] p-2 border border-gray-200 rounded focus:outline-none placeholder:text-sm text-sm md:text-base md:placeholder:text-base" />
+                    </div>
+                    <div className="flex flex-col gap-y-2 w-[100%] sm:w-[45%]">
+                      <label htmlFor="username">نام کاربری:</label>
+                      <input value={formData?.username} onChange={changeHandler} id="username" type="text" name="username" placeholder="نام کاربری" className="w-[100%] p-2 border border-gray-200 rounded focus:outline-none placeholder:text-sm text-sm md:text-base md:placeholder:text-base" />
+                    </div>
+                    <button type="button" onClick={submitHandler} className="flex items-center justify-center text-xs md:text-base text-primary p-2 w-[75%] sm:w-full max-w-[280px] border border-primary rounded mx-auto mt-4">
+                      <Edit className="w-4 h-4 md:w-5 md:h-5 ml-2"/>
                       ویرایش اطلاعات شخصی
                     </button>
+                  </form>
                 </div>
               </div>
             </div>
@@ -120,7 +190,7 @@ export default function Profile() {
           <ProfileSidebar showProfileSidebar={showProfileSidebar} setShowProfileSidebar={setShowProfileSidebar} logoutHandler={logoutHandler}/>
         </section>
       ) : (
-        <Navigate to="/login" />
+        <Navigate to="/register" />
       )}
     </div>
   );

@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-
-import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
-import { ChevronLeftIcon } from "@heroicons/react/24/outline";
 import { GlobalContext } from "../GlobalContextProvider";
+
+// import icons
+import { ArrowLeft2, SearchNormal1 } from "iconsax-react";
 
 export default function SortBar({searchBoxHandler}) {
   const {sortType, setSortType} = useContext(GlobalContext);
@@ -18,7 +18,7 @@ export default function SortBar({searchBoxHandler}) {
                 <button onClick={(e)=> setSortType(e.target.id)} id="mostPopular" className={`${sortType === "mostPopular" ? `${active}` : ''} flex items-center justify-between text-[10px] sm:text-sm lg:text-[15px] xl:text-base bg-gray-200 rounded-full px-2 py-[2px] w-full max-w-[140px]`}>
                   محبوب ترین
                   <span>
-                    <ChevronLeftIcon className="w-2 h-2 sm:w-4 sm:h-4" />
+                    <ArrowLeft2 className="w-2 h-2 sm:w-4 sm:h-4" />
                   </span>
                 </button>
               </li>
@@ -26,7 +26,7 @@ export default function SortBar({searchBoxHandler}) {
                 <button onClick={(e)=> setSortType(e.target.id)} id="bestSeller" className={`${sortType === "bestSeller" ? `${active}` : ''} flex items-center justify-between text-[10px] sm:text-sm lg:text-[15px] xl:text-base bg-gray-200 rounded-full px-2 py-[2px] w-full max-w-[140px]`}>
                   پر فروش ترین
                   <span>
-                    <ChevronLeftIcon className="w-2 h-2 sm:w-4 sm:h-4" />
+                    <ArrowLeft2 className="w-2 h-2 sm:w-4 sm:h-4" />
                   </span>
                 </button>
               </li>
@@ -34,7 +34,7 @@ export default function SortBar({searchBoxHandler}) {
                 <button onClick={(e)=> setSortType(e.target.id)} id="mostExpensive" className={`${sortType === "mostExpensive" ? `${active}` : ''} flex items-center justify-between text-[10px] sm:text-sm lg:text-[15px] xl:text-base bg-gray-200 rounded-full px-2 py-[2px] w-full max-w-[140px]`}>
                   گران ترین
                   <span>
-                    <ChevronLeftIcon className="w-2 h-2 sm:w-4 sm:h-4" />
+                    <ArrowLeft2 className="w-2 h-2 sm:w-4 sm:h-4" />
                   </span>
                 </button>
               </li>
@@ -42,7 +42,7 @@ export default function SortBar({searchBoxHandler}) {
                 <button onClick={(e)=> setSortType(e.target.id)} id="cheapest" className={`${sortType === "cheapest" ? `${active}` : ''} flex items-center justify-between text-[10px] sm:text-sm lg:text-[15px] xl:text-base bg-gray-200 rounded-full px-2 py-[2px] w-full max-w-[140px]`}>
                   ارزان ترین
                   <span>
-                    <ChevronLeftIcon className="w-2 h-2 sm:w-4 sm:h-4" />
+                    <ArrowLeft2 className="w-2 h-2 sm:w-4 sm:h-4" />
                   </span>
                 </button>
               </li>
@@ -52,7 +52,7 @@ export default function SortBar({searchBoxHandler}) {
             <div className="flex items-center bg-white border border-gray-200 p-2 rounded-md">
               <input onChange={searchBoxHandler} type="text" placeholder="جستجو" className="focus:outline-0 w-full"/>
               <span>
-                <MagnifyingGlassIcon className="w-5 h-5" />
+                <SearchNormal1 className="w-5 h-5" />
               </span>
             </div>
           </div>

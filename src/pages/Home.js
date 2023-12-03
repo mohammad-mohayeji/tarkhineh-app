@@ -3,11 +3,7 @@ import MainSlider from "../components/MainSlider";
 import { Link } from "react-router-dom";
 
 // import icons
-import { ChevronLeftIcon } from "@heroicons/react/24/outline";
-import { UserIcon } from "@heroicons/react/24/outline";
-import { PresentationChartBarIcon } from "@heroicons/react/24/outline";
-import { WifiIcon } from "@heroicons/react/24/outline";
-import { CalendarDaysIcon } from "@heroicons/react/24/outline";
+import { Profile2User, MenuBoard, HomeWifi, TrendUp, ArrowLeft2 } from "iconsax-react";
 
 // import images
 import mainCourse from "../assets/images/mainCourse.png"
@@ -60,32 +56,32 @@ export default function Home() {
               <Link className="flex items-center justify-between text-sm md:text-base border border-white rounded-md py-2 px-4 w-[185px] self-end hover:border-primary hover:bg-primary transition duration-200">
                 <span>اطلاعات بیشتر</span>
                 <span>
-                  <ChevronLeftIcon className="w-5 h-5" />
+                  <ArrowLeft2 className="w-5 h-5" />
                 </span>
               </Link>
             </div>
             <div className="lg:w-[50%] flex justify-center items-center flex-wrap gap-y-6">
               <div className="w-[50%] flex flex-col justify-center items-center">
                 <span className="mb-2">
-                  <UserIcon className="w-8 h-8 md:w-12 md:h-12 text-white" />
+                  <Profile2User className="w-8 h-8 md:w-12 md:h-12 text-white" />
                 </span>
                 <p className="text-sm md:text-base">پرسنلی مجرب و حرفه ای</p>
               </div>
               <div className="w-[50%] flex flex-col justify-center items-center">
                 <span className="mb-2">
-                  <PresentationChartBarIcon className="w-8 h-8 md:w-12 md:h-12 text-white" />
+                  <TrendUp className="w-8 h-8 md:w-12 md:h-12 text-white" />
                 </span>
                 <p className="text-sm md:text-base">کیفیت بالای غذا ها</p>
               </div>
               <div className="w-[50%] flex flex-col justify-center items-center">
                 <span className="mb-2">
-                  <WifiIcon className="w-8 h-8 md:w-12 md:h-12 text-white" />
+                  <HomeWifi className="w-8 h-8 md:w-12 md:h-12 text-white" />
                 </span>
                 <p className="text-sm md:text-base">محیطی دلنشین و آرام</p>
               </div>
               <div className="w-[50%] flex flex-col justify-center items-center">
                 <span className="mb-2">
-                  <CalendarDaysIcon className="w-8 h-8 md:w-12 md:h-12 text-white" />
+                  <MenuBoard className="w-8 h-8 md:w-12 md:h-12 text-white" />
                 </span>
                 <p className="text-sm md:text-base">منوی متنوع</p>
               </div>

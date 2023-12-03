@@ -45,7 +45,7 @@
   }
 
   .nav-link.active {
-    @apply border-b-2 border-primary text-primary;
+    @apply font-bold text-primary;
   }
 
   .cart-link.active {

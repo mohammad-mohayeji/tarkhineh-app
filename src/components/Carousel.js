@@ -1,5 +1,5 @@
 // Import Swiper React components
-import { Swiper, useSwiper } from "swiper/react";
+import { Swiper } from "swiper/react";
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
 import CarouselNavBtns from "./CarouselNavBtns";

@@ -6,17 +6,19 @@ import slider1 from "../assets/images/slider.png";
 import slider2 from "../assets/images/slider2.png";
 import slider3 from "../assets/images/slider3.png";
 
-import { ChevronLeftIcon } from "@heroicons/react/24/outline";
-import { ChevronRightIcon } from "@heroicons/react/24/outline";
+// import icons
+import { ArrowLeft2, ArrowRight2 } from "iconsax-react";
 
 const divStyle = {
+  height: "380px",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  backgroundRepeat: "no-repeat",
-  backgroundPostion: "center center",
+  background: "no-repeat center center fixed",
   backgroundSize: "cover",
-  height: "380px",
+  WebkitBackgroundSize: "cover",
+  MozBackgroundSize: "cover",
+  OBackgroundSize: "cover",
 };
 
 const slideImages = [
@@ -34,12 +36,12 @@ const buttonStyle = {
 const properties = {
   prevArrow: (
     <button style={{ ...buttonStyle }} className="ml-4">
-      <ChevronLeftIcon className="text-white" />
+      <ArrowLeft2 className="text-white" />
     </button>
   ),
   nextArrow: (
     <button style={{ ...buttonStyle }} className="mr-4">
-      <ChevronRightIcon className="text-white" />
+      <ArrowRight2 className="text-white" />
     </button>
   ),
 };
@@ -47,7 +49,7 @@ const properties = {
 export default function MainSlider() {
   return (
     <div className="slide-container">
-      <Slide {...properties}>
+      <Slide {...properties} duration={3000}>
         {slideImages.map((slideImage, index) => (
           <div key={index}>
             <div style={{ ...divStyle, backgroundImage: `url(${slideImage.url})` }}>

@@ -4,10 +4,9 @@ import { Link } from "react-router-dom";
 import defaultIMG from "../assets/images/defaultBranchIMG.png"
 
 // import icons
-import { ChevronLeftIcon } from "@heroicons/react/24/outline";
+import { ArrowLeft2 } from "iconsax-react";
 
 export default function RestaurantCard({branchName, branchNameEN, branchIMG = defaultIMG, address = "به زودی ..."}) {
-  console.log(branchName);
   return (
     <div className="group overflow-hidden">
       <div className="border border-gray-400 flex flex-row md:flex-col rounded-lg  md:h-[450px] lg:h-[390px] relative overflow-hidden">
@@ -24,7 +23,7 @@ export default function RestaurantCard({branchName, branchNameEN, branchIMG = de
           <Link to={typeof(branchNameEN) !== "undefined" ? `branches/${branchNameEN}` : ""} className="md:opacity-0 md:invisible md:absolute md:-bottom-[100%] md:left-1/2 md:-translate-x-1/2 md:group-hover:opacity-100 md:group-hover:visible md:group-hover:bottom-0 flex justify-between items-center border border-shade-200 rounded-md py-1 md:py-2 px-4 max-w-[130px] mx-auto transition-all duration-300 md:mb-4 text-shade-200 hover:border-primary hover:bg-primary hover:text-white">
             <span className="text-xs sm:text-sm">صفحه شعبه</span>
             <span>
-              <ChevronLeftIcon className="w-4 h-4 sm:w-5 sm:h-5" />
+              <ArrowLeft2 className="w-4 h-4 sm:w-5 sm:h-5" />
             </span>
           </Link>
         </div>
