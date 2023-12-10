@@ -68,7 +68,7 @@ export default function Menu() {
           ))}
         </FoodList>
       )}
-      {!products.length && (
+      {!products.length && !loading && (
         <div className="flex flex-col justify-center items-center pt-4 pb-10">
           <p className="text-xl mb-6">موردی با این مشخصات پیدا نکردیم !</p>
           <img src={notFound} alt="notFound" />
