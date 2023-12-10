@@ -18,7 +18,7 @@ import MenuCard from "../components/MenuCard";
 export default function Home() {
   const[info, setInfo] = useState([])
   useEffect(()=> {
-    axios.get('http://localhost:5000/info').then((res)=> {
+    axios.get('https://tarkhineh-restful-api.vercel.app/info').then((res)=> {
       setInfo(res.data)
     })
   }, [])

@@ -49,7 +49,7 @@ export default function SignupModal() {
     } else {
       const token = uuidv4();
       console.log(token);
-      axios.post("http://localhost:5000/users/", {
+      axios.post("https://tarkhineh-restful-api.vercel.app/users/", {
         username,
         password: pwd,
         token

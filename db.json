@@ -501,15 +501,6 @@
   "users": [
     {
       "id": 1,
-      "username": "admin",
-      "password": "Mohammad@1380",
-      "token": "1215253028",
-      "firstname": "محمد",
-      "lastname": "مهیجی",
-      "phonenumber": "09134525878"
-    },
-    {
-      "id": 2,
       "username": "itsMohammad",
       "password": "!Mm12345",
       "token": "bf8eb99a-9555-4e21-9ee0-d36971343439",

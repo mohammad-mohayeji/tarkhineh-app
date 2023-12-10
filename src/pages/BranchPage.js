@@ -23,22 +23,22 @@ export default function BranchPage() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/info`)
+      .get(`https://tarkhineh-restful-api.vercel.app/info`)
       .then((res) => {
         setInfo(res.data);
-        return axios.get(`http://localhost:5000/comments`);
+        return axios.get(`https://tarkhineh-restful-api.vercel.app/comments`);
       })
       .then((res) => {
         setComments(res.data);
-        return axios.get(`http://localhost:5000/foods?_page=1&_limit=6`);
+        return axios.get(`https://tarkhineh-restful-api.vercel.app/foods?_page=1&_limit=6`);
       })
       .then((res) => {
         setPersianFoods(res.data);
-        return axios.get(`http://localhost:5000/desserts?_page=1&_limit=6`);
+        return axios.get(`https://tarkhineh-restful-api.vercel.app/desserts?_page=1&_limit=6`);
       })
       .then((res) => {
         setDesserts(res.data);
-        return axios.get(`http://localhost:5000/foods?_page=3&_limit=6`);
+        return axios.get(`https://tarkhineh-restful-api.vercel.app/foods?_page=3&_limit=6`);
       })
       .then((res) => {
         setForeignFoods(res.data);

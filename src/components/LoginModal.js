@@ -79,11 +79,7 @@ export default function LoginModal() {
                 placeholder="رمز عبور"
               />
             </div>
-            <button
-              onClick={submitHandler}
-              className="w-full bg-primary text-white font-medium rounded-md p-2"
-              type="button"
-            >
+            <button disabled={!username || !password} onClick={submitHandler} className="w-full bg-primary text-white font-medium rounded-md p-2 disabled:bg-opacity-50" type="button">
               ورود
             </button>
           </div>

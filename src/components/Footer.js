@@ -11,7 +11,7 @@ import { TfiTwitter } from "react-icons/tfi";
 export default function Footer() {
   const [info, setInfo] = useState({});
   useEffect(() => {
-    axios.get("http://localhost:5000/info").then((res) => {
+    axios.get("https://tarkhineh-restful-api.vercel.app/info").then((res) => {
       setInfo(res.data);
     });
   }, []);

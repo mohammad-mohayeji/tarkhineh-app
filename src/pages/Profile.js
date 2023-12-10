@@ -22,7 +22,7 @@ export default function Profile() {
   const userToken = useGetCookie("userToken");
 
   useEffect(() => {
-    axios.get("http://localhost:5000/users").then((res) => {
+    axios.get("https://tarkhineh-restful-api.vercel.app/users").then((res) => {
       setUsers(res.data);
     })
   }, []);

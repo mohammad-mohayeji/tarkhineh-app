@@ -15,7 +15,7 @@ export default function GlobalContextProvider({ children }) {
   const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/users").then((res) => {
+    axios.get("https://tarkhineh-restful-api.vercel.app/users").then((res) => {
       setUsers(res.data);
     });
   }, []);
@@ -69,9 +69,6 @@ export default function GlobalContextProvider({ children }) {
   };
 
   const removeFromCartHandler = (product) => {
-    const existingProduct = cartItems.find(
-      (item) => item.id === product.id && item.category === product.category
-    );
     setCartItems(cartItems.filter((item) => item.id !== product.id));
   };
 

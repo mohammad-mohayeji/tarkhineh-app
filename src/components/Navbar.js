@@ -14,7 +14,7 @@ export default function Navbar() {
   const { cartItems } = useContext(GlobalContext);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/info").then((res) => {
+    axios.get("https://tarkhineh-restful-api.vercel.app/info").then((res) => {
       setInfo(res.data);
     });
   }, []);
@@ -141,7 +141,7 @@ export default function Navbar() {
           </ul>
           <div className="flex items-center gap-x-1.5">
             <NavLink to="cart" className="cart-link bg-tint-100 rounded p-1 relative">
-              <ShoppingCart className="cart-icon w-[18px] h-[18px] md:w-[28px] md:h-[28px] text-primary" />
+              <ShoppingCart className="cart-icon w-[20px] h-[20px] md:w-[28px] md:h-[28px] text-primary" />
               {cartItems.length > 0 && (
                 <div className="w-3 h-3 md:w-4 md:h-4 bg-tint-600 text-[10px] md:text-xs text-white rounded-full absolute -top-1.5 -right-1.5 flex justify-center items-center">
                   {cartItems.length}
@@ -149,7 +149,7 @@ export default function Navbar() {
               )}
             </NavLink>
             <NavLink to="profile" className="cart-link bg-tint-100 rounded p-1">
-              <User className="cart-icon w-[18px] h-[18px] md:w-[28px] md:h-[28px] text-primary" />
+              <User className="cart-icon w-[20px] h-[20px] md:w-[28px] md:h-[28px] text-primary" />
             </NavLink>
           </div>
         </div>

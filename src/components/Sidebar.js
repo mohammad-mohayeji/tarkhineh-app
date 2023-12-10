@@ -27,20 +27,20 @@ export default function Sidebar({ info ,showSidebar, setShowSidebar}) {
         <ul className="text-sm p-3">
           <li>
             <Link to="/" className="flex items-center gap-x-2 py-2 border-b border-gray-400">
-              <span><Home className="text-xl text-shade-200"/></span>
+              <span><Home className="w-5 h-5 text-shade-200"/></span>
               <span>صفحه اصلی</span>
             </Link>
           </li>
-          <li>
+          <li className={`${!showAccordion ? 'h-[37px]' : 'h-[195px]'} transition-all duration-300`}>
             <button onClick={(e)=> setShowAccordion(!showAccordion)} className="w-full flex items-center justify-between py-2 border-b border-gray-400">
               <div className="flex items-center gap-x-2">
-                <span><HomeHashtag className="text-xl text-shade-200"/></span>
+                <span><HomeHashtag className="w-5 h-5 text-shade-200"/></span>
                 <span>شعبه</span>
               </div>
               <span><ArrowDown2 className={`${!showAccordion ? '' : 'rotate-180'} w-3 h-3 transition duration-300`}/></span>
             </button>
-            <div className={`${!showAccordion ? 'hidden' : ''}`}>
-              <div className="w-full px-2 my-2">
+            <div className={`${!showAccordion ? 'invisible opacity-0 h-0' : 'visible opacity-100 h-[145px]'} transition-all duration-300`}>
+              <div className={`${!showAccordion ? 'invisible opacity-0' : 'visible opacity-100 delay-75'} transition-all duration-300  w-full px-2 my-2`}>
                 <ul>
                   <li><Link to={`branches/${info.branchNameEN}`} className="block p-2 border-b border-gray-200">اکباتان</Link></li>
                   <li><Link className="block p-2 border-b border-gray-200">به زودی ...</Link></li>
@@ -50,16 +50,16 @@ export default function Sidebar({ info ,showSidebar, setShowSidebar}) {
               </div>
             </div>
           </li>
-          <li>
+          <li className={`${!showAccordion2 ? 'h-[37px]' : 'h-[195px]'} transition-all duration-300`}>
             <button onClick={(e)=> setShowAccordion2(!showAccordion2)} className="w-full flex items-center justify-between py-2 border-b border-gray-400">
               <div className="flex items-center gap-x-2">
-                <span><MenuBoard className="text-xl text-shade-200"/></span>
+                <span><MenuBoard className="w-5 h-5 text-shade-200"/></span>
                 <span>منو</span>
               </div>
               <span><ArrowDown2 className={`${!showAccordion2 ? '' : 'rotate-180'} w-3 h-3 transition duration-300`}/></span>
             </button>
-            <div className={`${!showAccordion2 ? 'hidden' : ''}`}>
-              <div className="w-full px-2 my-2">
+            <div className={`${!showAccordion2 ? 'invisible opacity-0 h-0' : 'visible opacity-100 h-[145px]'} transition-all duration-300`}>
+              <div className={`${!showAccordion2 ? 'invisible opacity-0' : 'visible opacity-100 delay-75'} transition-all duration-300  w-full px-2 my-2`}>
                 <ul>
                   <li><Link to={`branches/${info.branchNameEN}/menu/foods`} className="block p-2 border-b border-gray-200">غذای اصلی</Link></li>
                   <li><Link to={`branches/${info.branchNameEN}/menu/appetizers`} className="block p-2 border-b border-gray-200">پیش غذا</Link></li>
@@ -71,13 +71,13 @@ export default function Sidebar({ info ,showSidebar, setShowSidebar}) {
           </li>
           <li>
             <Link className="flex items-center gap-x-2 py-2 border-b border-gray-400">
-              <span><Profile2User className="text-xl text-shade-200"/></span>
+              <span><Profile2User className="w-5 h-5 text-shade-200"/></span>
               <span>درباره ما</span>
             </Link>
           </li>
           <li>
             <Link className="flex items-center gap-x-2 py-2">
-              <span><CallCalling className="text-xl text-shade-200"/></span>
+              <span><CallCalling className="w-5 h-5 text-shade-200"/></span>
               <span>تماس با ما</span>
             </Link>
           </li>

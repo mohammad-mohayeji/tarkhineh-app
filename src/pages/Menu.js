@@ -26,7 +26,7 @@ export default function Menu() {
 
   const getData = (sort, order) => {
     setLoading(true);
-    axios.get(`http://localhost:5000/${foodCategory}?_sort=${sort}&_order=${order}`).then((res) => {
+    axios.get(`https://tarkhineh-restful-api.vercel.app/${foodCategory}?_sort=${sort}&_order=${order}`).then((res) => {
         setProducts(res.data);
         setLoading(false);
       });
@@ -34,7 +34,7 @@ export default function Menu() {
 
   const searchBoxHandler = (e) => {
     setLoading(true)
-    axios.get(`http://localhost:5000/${foodCategory}?q=${e.target.value}`).then((res) => {
+    axios.get(`https://tarkhineh-restful-api.vercel.app/${foodCategory}?q=${e.target.value}`).then((res) => {
         setProducts(res.data);
         setLoading(false)
       });
