@@ -31,19 +31,6 @@
     background: #555;
   }
 
-  .owl-theme .owl-nav [class*="owl-"] {
-    background-color: #fff !important;
-    width: 35px;
-    height: 35px;
-    border-radius: 8px !important;
-    border: solid 1px gray !important;
-  }
-
-  .owl-theme .owl-item img {
-    display: inline !important;
-    width: unset !important;
-  }
-
   .nav-link.active {
     @apply font-bold text-primary;
   }
