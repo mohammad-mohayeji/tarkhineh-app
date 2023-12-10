@@ -12,7 +12,7 @@ export default function MenuProductCard({ item }) {
     <div>
       <div className="flex border border-gray-200 rounded-lg overflow-hidden relative">
         <div className="w-full max-w-[120px] sm:max-w-[170px]">
-          <img src={item.imgURL} className="h-full object-cover" alt="" />
+          <img src={item.imgURL} className="max-h-full object-cover" alt="" />
         </div>
         <div className="px-3 py-3 w-full">
           <div className="flex flex-col gap-x-4 mb-3">
