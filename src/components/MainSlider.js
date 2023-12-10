@@ -13,7 +13,6 @@ import { Autoplay } from "swiper/modules";
 import slider1 from "../assets/images/slider.png";
 import slider2 from "../assets/images/slider2.png";
 import slider3 from "../assets/images/slider3.png";
-import testSlider from "../assets/images/testSlider.png"
 
 // import custom navigation buttons
 import SliderNavBtns from "./SliderNavBtns";
@@ -33,7 +32,7 @@ const divStyle = {
 const slideImages = [
   { url: slider1, caption: "تجربه غذای سالم و گیاهی به سبک ترخینه" },
   { url: slider2, caption: "طعم بی نظیر طبیعت" },
-  { url: testSlider, caption: "لذت غذای سالم و گیاهی را با ترخینه تجربه کنید‌" },
+  { url: slider3, caption: "لذت غذای سالم و گیاهی را با ترخینه تجربه کنید‌" },
 ];
 
 export default function MainSlider() {
