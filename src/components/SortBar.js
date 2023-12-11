@@ -13,7 +13,7 @@ export default function SortBar({searchBoxHandler}) {
       <div className="container">
         <div className="flex flex-col lg:flex-row items-center gap-y-4">
           <div className="w-full xl:max-w-[600px]">
-            <ul className="flex items-center justify-center lg:justify-start gap-x-4 w-full lg:pl-4">
+            <ul className="flex items-center justify-center lg:justify-start gap-x-4 w-full">
               <li className="w-auto">
                 <button onClick={(e)=> setSortType(e.target.id)} id="mostPopular" className={`${sortType === "mostPopular" ? `${active}` : ''} flex items-center justify-between text-[10px] sm:text-sm lg:text-[15px] xl:text-base bg-gray-200 rounded-full px-2 py-[2px] w-full`}>
                   محبوب ترین
