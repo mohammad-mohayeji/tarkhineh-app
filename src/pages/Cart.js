@@ -23,7 +23,7 @@ export default function Cart() {
           <div className="flex justify-center items-center border border-gray-300 rounded-lg h-[400px]">
             <div className="max-w-[370px] h-[300px] flex flex-col gap-y-8 justify-center items-center" style={{ background: `url(${emptyCartBg})`, backgroundRepeat: "no-repeat", backgroundPosition: 'center center'}}>
                 <h4 className="text-gray-700 text-sm md:text-xl">شما درحال حاضر هیچ سفارشی ثبت نکرده اید!</h4>
-                <Link className="border border-primary bg-white text-primary text-sm md:text-base font-semibold rounded py-2 px-6">منوی رستوران</Link>
+                <Link to='/branches/Ekbatan/menu/foods' className="border border-primary bg-white text-primary text-sm md:text-base font-semibold rounded py-2 px-6">منوی رستوران</Link>
             </div>
           </div>
         </div>

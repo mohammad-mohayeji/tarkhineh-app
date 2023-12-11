@@ -115,10 +115,7 @@ export default function BranchPage() {
               ))}
             </Carousel>
           </div>
-          <Link
-            to={`/branches/${info.branchNameEN}/menu/foods`}
-            className="mx-auto flex items-center justify-between text-primary border border-primary rounded-md p-3 max-w-[190px]"
-          >
+          <Link to={`/branches/${info.branchNameEN}/menu/foods`} className="mx-auto flex items-center justify-between text-primary border border-primary rounded-md p-3 max-w-[190px]">
             <span>
               <Note className="w-6 h-6" />
             </span>
@@ -139,9 +136,7 @@ export default function BranchPage() {
           نظرات کاربران
         </h2>
         <div className="container">
-          <Carousel
-            responsive={{ 1024: { slidesPerView: 2 }, 0: { slidesPerView: 1 } }}
-          >
+          <Carousel responsive={{ 1024: { slidesPerView: 2 }, 0: { slidesPerView: 1 } }}>
             {comments.map((item) => (
               <SwiperSlide key={item.id}>
                 <CommentCard item={item} />

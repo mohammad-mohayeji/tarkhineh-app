@@ -7,10 +7,10 @@ export default function SliderNavBtns() {
   return (
     <div className="w-full flex justify-between items-center gap-x-4 absolute top-1/2 -translate-y-1/2 z-20">
       <button onClick={(e) => swiper.slidePrev()}>
-        <ArrowRight2 className="w-8 h-8 text-white mr-4" />
+        <ArrowRight2 className="w-6 h-6 md:w-8 md:h-8 text-white mr-4" />
       </button>
       <button onClick={(e) => swiper.slideNext()}>
-        <ArrowLeft2 className="w-8 h-8 text-white ml-4" />
+        <ArrowLeft2 className="w-6 h-6 md:w-8 md:h-8 text-white ml-4" />
       </button>
     </div>
   );

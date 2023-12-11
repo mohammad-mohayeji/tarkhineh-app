@@ -64,7 +64,7 @@ export default function Menu() {
       {!loading && (
         <FoodList title={title}>
           {products.map((item) => (
-            <MenuProductCard item={item} />
+            <MenuProductCard key={item.id} item={item} />
           ))}
         </FoodList>
       )}
